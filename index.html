@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suppression de compte - ETRICKS</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 32px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            color: #666;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+        }
+        
+        h2 {
+            color: #333;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+        
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 12px;
+            padding-left: 35px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .steps li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #667eea;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .form-section {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        label {
+            display: block;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        input[type="email"]:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            width: 100%;
+            padding: 14px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #5568d3;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border-left-color: #ffc107;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            color: #856404;
+        }
+        
+        .warning strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🗑️ ETRICKS</h1>
+        <p class="subtitle">Suppression de compte</p>
+        
+        <div class="section">
+            <h2>📱 Depuis l'application</h2>
+            <ol class="steps">
+                <li>Ouvrez l'application ETRICKS</li>
+                <li>Accédez à votre profil ou aux paramètres</li>
+                <li>Recherchez l'option "Supprimer mon compte"</li>
+                <li>Suivez les instructions pour confirmer la suppression</li>
+            </ol>
+        </div>
+        
+        <div class="section">
+            <h2>🌐 Sans accès à l'application</h2>
+            <p style="color: #555; line-height: 1.6; margin-bottom: 20px;">
+                Si vous n'avez plus accès à l'application (téléphone perdu, application désinstallée, etc.), 
+                vous pouvez demander la suppression de votre compte via le formulaire ci-dessous.
+            </p>
+            
+            <div class="form-section">
+                <form action="https://formspree.io/f/xeojbjdk" method="POST">
+                    <label for="email">Votre adresse email :</label>
+                    <input type="email" id="email" name="email" required placeholder="exemple@email.com">
+                    
+                    <input type="hidden" name="_subject" value="Demande de suppression de compte ETRICKS">
+                    <input type="hidden" name="_next" value="https://etricks.fr">
+                    
+                    <button type="submit">Envoyer la demande de suppression</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="warning">
+            <strong>⚠️ Attention :</strong>
+            La suppression de votre compte est définitive et irréversible. Toutes vos données seront supprimées de manière permanente.
+        </div>
+    </div>
+</body>
+</html>
